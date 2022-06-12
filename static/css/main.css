@@ -1,0 +1,321 @@
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body{
+  font-family: 'Merriweather', serif;
+  font-size: 15px;
+  background-color: #fdfcdc;
+}
+
+.social .fab{
+  color:black;
+}
+
+main{
+  background-image: url('../images/bg3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height:500px;
+}
+
+.header-btn{
+  position: absolute;
+  top: 85%;
+  left:5%;
+}
+
+.header-btn .links {
+  border: 1px solid #ffffff;
+  padding: 10px 25px;
+  border-radius: 18px;
+  background-color: rgb(130, 121, 221);
+  color: white;
+}
+
+
+.header-btn a{
+  text-decoration: none;
+}
+
+.header-btn:hover a{
+  margin-left:10px;
+}
+
+
+.home-imgs{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.home-imgs > .card{
+  margin: 10px 5px 15px 20px; 
+}
+
+/* main navbar styling */
+
+.navigation{
+  background-color: #1F1C44;
+  height: 70px;
+}
+
+.nav-border{
+  display: flex;
+  justify-content: space-between;
+  padding-left:0;
+  padding-right:0;
+}
+
+#menu-toggle{
+  display: flex;
+  align-items: center;
+  padding-left: 4px;
+  color:white;
+  width: 25%;
+}
+
+.search-form-section{
+  padding-left: 4px;
+  display: flex;
+  height: 100%;
+}
+
+.search-form{
+  display: flex;
+  justify-items: center;
+}
+
+.inp-sec{
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.inp-sec input{
+  border-color: #fd6b9a;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  margin-left: 4px;
+  outline: none;
+  background: transparent;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.login-submit{
+  display: flex;
+  align-items: center;
+  width: 25%;
+
+}
+
+/* main page styling */
+.main-title{
+  margin: 40px 0px 40px 0px;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text {
+  background-color: #fd6b9a;;
+  color: white;
+  font-size: 16px;
+  padding: 8px 25px 8px 25px;
+  border-radius: 25px;
+}
+
+.card-title{
+  height: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 15px; 
+}
+
+.home-imgs hr{
+  height:0.5px;
+  background-color: #fd6b9a;
+}
+
+.pub-info{
+  display: flex;
+  flex-direction: row;
+}
+
+.main-card{
+  position: relative;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.main-card:hover .image {
+  opacity: 0.3;
+}
+
+.main-card:hover .middle {
+  opacity: 1;
+}
+
+.details{
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.ratings-sec{
+  width:400px;
+  padding:30px;
+  text-align:center;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  background-color: #ffffff;
+  font-family: 'Metal Mania', cursive;
+}
+
+.detail-img{
+  margin-bottom:30px;
+}
+
+.rate-btn{
+  margin-top: 20px;
+  color: #FD6B9A;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.rate-vote-btn{
+  position:absolute;
+  top:50%;
+  left:50%;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.details:hover .detail-img {
+  opacity: 0.5;
+}
+
+.details:hover .proj-sub {
+  opacity: 1;
+}
+
+.proj-sub{
+  transition: .3 ease;
+  opacity: 0;
+}
+
+.more-details{
+  margin-top: 30px;
+  text-transform: capitalize;
+}
+
+.results{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.criteria{
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-update-form{
+  width:400px;
+  padding:30px;
+  text-align:center;
+  background-color: #ffffff;
+  font-family: 'Metal Mania', cursive;
+}
+
+.newpost-btn, .profile-update-btn{
+  background-color: #FD6B9A;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.8s;
+
+}
+
+.new-post input, .profile-update-form input{
+  display:block;
+  width: 100%;
+  margin-top: 25px;
+  padding: 0 20px;
+  height: 44px;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  border-top:0;
+  border-right:0;
+  border-left:0;
+  border-bottom: 0.5px solid #FD6B9A;
+
+}
+
+.prof-page{
+  display: flex;
+  flex-direction: row;
+  margin-top:300px;
+
+}
+
+.new-post{
+  width:400px;
+  padding:30px;
+  text-align:center;
+  position:absolute;
+  left:50%;
+  top:70%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  background-color: #ffffff;
+  font-family: 'Metal Mania', cursive;
+}
+
+
+.voting-dets{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.values{
+  display: flex; 
+  flex-direction:row; 
+  justify-content:space-between;
+  margin-top:20px;
+  text-align: center;
+}
+

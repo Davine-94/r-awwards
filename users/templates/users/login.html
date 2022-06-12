@@ -1,0 +1,19 @@
+{% extends 'users/base.html'%}
+{% load bootstrap4 %}
+{%  block content %}
+<div class="signup-form">
+    <h1>Log In</h1>
+    <form action="" method="POST">
+      {% csrf_token %}   
+        {% bootstrap_form form layout='inline' %} 
+        <input type="submit" value="Log In" class="signup-btn">
+        <div class="sign-option">
+          Don't Have an Account? <a class="ml-2" href="{% url 'register'%}"> Sign Up</a>
+        </div>
+    </form>
+  </div>
+{% endblock %}
+
+
+
+

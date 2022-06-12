@@ -1,0 +1,32 @@
+{% extends 'projects/base.html'%}
+{% load bootstrap4 %}
+
+{% block content %}
+{{block.super}}
+<div class="container">
+  <h4 class="main-title ml-3">Top Sites</h4>
+  <div class="home-imgs">
+    {% for project in projects %}
+    <div class="card main-card" style="width: 21rem;">
+      <div class="card-img-sec">
+        <img class="card-img-top img-fluid image" src="{{ project.image.url }}" alt="website">
+        <div class="middle">
+          <a href="{% url 'post-detail' project.id %}" class="text btn btn-sm btn-outline-info">View</a>
+        </div>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">
+            <p>From: {{project.country}}</p>
+            <p>{{ project.created_at}}</p>
+        </h5>
+        <hr>
+        <div class="pub-info">
+          <img src="{{ project.publisher.profile.prof_pic.url }}" alt="" class="rounded-circle" height="25" width="25">
+          <p class="ml-2">By: {{project.publisher}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

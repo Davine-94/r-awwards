@@ -1,0 +1,86 @@
+<section id="top-bar" class="p-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h6 class="mb-0 lan f-12 pb-0">ENGLISH</h6>
+      </div>
+      <div class="col-md-4">
+        <p class="mb-0">The awards of design, creativity and innovation</p>
+      </div>
+      <div class="col-md-4">
+        <div class="social text-right">
+          <a href="#">
+            <i class="fab fa-twitter ml-3"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-facebook ml-3"></i>
+          </a>
+
+          <a href="#">
+            <i class="fab fa-instagram ml-3"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="nav navigation border-top">
+  <div class="container-fluid nav-border">
+    <div id="menu-toggle">
+      <span class="ml-3 mr-2 mt-3">
+        <p><i class="fas fa-bars" style="font-size: 25px;"></i></p>
+      </span>
+      <h6 class="mb-0 pr-4 f-12">MENU</h6>
+      <div class="border-left border-dark search-form-section">
+        <form class="search-form ml-2" action="{% url 'post-search'%}" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="inp-sec">
+            <i class="fas fa-search"></i>
+            <input class="form-control" type="text" placeholder="Search" name="q">
+          </div>
+          <button class="btn btn-sm d-none" type="submit"></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="logo">
+      <a class="nav-link " href="{% url 'homepage' %}">
+        <h2 class="mb-0 title text-white-50">INSPIRE</h2>
+      </a>
+    </div>
+    {% if user.is_authenticated%}
+    <div class="login-submit">
+      <a href="{% url 'profile' %}" class="f-12 font-weight-bold mr-3 ml-auto nav-link text-white-50">PROFILE</a>
+      <a href="{% url 'logout' %}"
+        class="nav-link f-12 font-weight-bold px-4 h-100 d-flex align-items-center text-light">LOGOUT</a>
+      <a href="{% url 'new_post' %}"
+        class="nav-link f-12 font-weight-bold px-4 h-100 d-flex align-items-center text-light">SUBMIT SITE</a>
+    </div>
+    {% else %}
+    <div class="login-submit">
+      <a href="{% url 'login' %}" class="f-12 font-weight-bold mr-3 ml-auto nav-link text-white-50">REGISTER
+        /
+        LOGIN</a>
+      <a href="{% url 'new_post' %}"
+        class="nav-link f-12 font-weight-bold px-4 h-100 d-flex align-items-center text-light">SUBMIT
+        YOUR SITE</a>
+    </div>
+    {% endif %}
+  </div>
+</nav>
+
+
+<!-- 
+<div class="sidebar">
+  <header>Sidebar</header>
+  <ul>
+    <li><a href="#"><i class="fas fa-sign-in-alt"></i>Register/Login</a></li>
+    <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+    <li><a href="#"><i class="fas fa-trophy"></i>Winners</a></li>
+    <li><a href="#"><i class="fas fa-layer-group"></i>Collections</a></li>
+    <li><a href="#"><i class="fas fa-folder"></i>Directory</a></li>
+    <li><a href="#"><i class="fas fa-blog"></i>Blog</a></li>
+    <li><a href="#"><i class="fas fa-users"></i>About us</a></li>
+  </ul>
+</div> -->

@@ -1,0 +1,65 @@
+{% extends 'projects/base.html'%}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container">
+  <div class="details">
+    <div class="row">
+      <div class="col-md-7">
+        <img src="{{ project.image.url }}" alt="" width="730" height="420" class="img-fluid detail-img">
+        <p><b>Title:</b> {{ project.title}}</p>
+        <p><b>Description:</b> {{ project.description }}</p>
+        <p><b>Published by:</b> {{ project.publisher }}</p>
+        <span><b>Added on:</b> {{ project.created_at  }} </span>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-3">
+        <a href="{% url 'rate-project' project.id%}" class="btn btn-sm btn-outline-danger pl-2 mr-5">Rate</a>
+        <a href="{{project.link}}" class="btn btn-sm btn-outline-success">Visit Site</a>
+        <div class="criteria_average">
+          <h6 class="text-center mt-4"><b>Criteria Average</b></h6>
+          <div class="values">
+            <p><b>Design</b><br>{{rating.design}}</p>
+            <p><b>Usability</b><br>{{rating.usability}}</p>
+            <p><b>Content</b><br>{{rating.content}}</p>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <div class="rating-section text-center">
+      <h1>Votes</h1>
+      {% if project.rating_set.all.count > 0 %}
+      {% for vote in project.rating_set.all %}
+      <ul>
+        <li>
+          <div class="row">
+            <div class="col-md-4">
+              <img src="{{ vote.user.profile.prof_pic.url }}" alt="" class="rounded-circle" height="25" width="25">
+              <p class="ml-2"><b>{{vote.user}}</b></p>
+            </div>
+            <div class="col-md-6" style="display: flex; justify-content:center; flex-direction:row;">
+              <h6 class="design ml-3"><b>Design:</b> {{vote.design}}</h6>
+              <h6 class="content ml-3"><b>Content:</b> {{vote.content}}</h6>
+              <h6 class="usability ml-3"><b>Usability:</b> {{vote.usability}}</h6>
+              <h6 class="usability ml-3"><b>Voter Average:</b> {{vote.average}}</h6>
+            </div>
+          </div>
+
+        </li>
+      </ul>
+      {% endfor %}
+      {% else %}
+      <h4 class="mt-4">This post has not been rated yet</h4>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+{{block.super}}
+<script src="../../../static/js/details.js"></script>
+{% endblock %}

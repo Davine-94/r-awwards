@@ -1,0 +1,9 @@
+{% extends 'users/base.html'%}
+{% load bootstrap4 %}
+{%  block content %}
+<div class="logout-page">
+  <h1>You have been logged out</h1>
+  <span><small><a href="{% url 'login'%}">Log In Again</a></small></span>
+</div>
+
+{% endblock %}
